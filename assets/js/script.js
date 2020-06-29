@@ -50,6 +50,18 @@ var questions = [
         choices: ["Yokohama", "Kyoto", "Tokyo", "Osaka"],
         answer: "Tokyo"
     },
-
-
 ];
+//Declare the variables
+var score = 0;
+var questionIndex = 0;
+var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector("#startTime");
+var questionsDiv = document.querySelector("#questionsDiv");
+var wrapper = document.querySelector("#wrapper");
+
+//Timer variables. Timer will be set to give 10 seconds for each questions
+var secondsLeft = 101; //10 seconds per questino
+var holdInterval = 0;
+var penalty = 15; //15 seconds deducted for each wrong answer
+
+var createUl = document.createElement("ul") //creating new element unorderlist 
