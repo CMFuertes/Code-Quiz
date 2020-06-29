@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Travel Quiz</title>
+    <link rel="stylesheet" type="text/css" href="Assets/css/style.css" />
+
 </head>
+
 <body>
-    
+    <a href="highscores.html">Highscores</a>
+
+    <div class="timer">Time: <span id="currentTime">0</span></div>
+
+    <div id="wrapper">
+        <div class="start">
+            <h1>Travel Code Quiz</h1>
+            <p>
+                The world may be under a lockdown, but that doesn't mean we cannot travel... virtually of coarse. Answer
+                the following travel related questions within the given time. But beware, any question you get wrong
+                deducts 15 seconds from the timer. Bon Voyage and good luck!
+            </p>
+            <ul id="choicesUl"></ul>
+            <button id="startTime">Start Quiz</button>
+        </div>
+    </div>
+
+    <div id="questionsDiv"></div>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
