@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Travel Quiz</title>
-    <link rel="stylesheet" type="text/css" href="Assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    
 
 </head>
 
 <body>
-    <a href="highscores.html">Highscores</a>
+    <div class="highScoreButt"> <a href="highscores.html"><button id="highScoreButt">View Highscores</button></a></div>
 
-    <div class="timer">Time: <span id="timeLeft">0</span></div>
+    <div class="timer">You Have: <span id="timeLeft">0</span> Seconds Left</div>
 
     <div id="wrapper">
         <div class="start">
-            <h1>Travel Code Quiz</h1>
+            <h1>Travel Trivia Quiz</h1>
             <p>
-                The world may be under a lockdown, but that doesn't mean we cannot travel... virtually of coarse. Answer
-                the following travel related questions within the given time. But beware, any question you get wrong
+                The world may be under a lockdown, but that doesn't mean we cannot travel... virtually of course.
+                <br><br>
+                Answer the following travel related questions within the given time. But beware, any question you get wrong
                 deducts 15 seconds from the timer. Bon Voyage and good luck!
             </p>
             <ul id="choicesUl"></ul>

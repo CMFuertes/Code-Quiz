@@ -1,5 +1,3 @@
-
-// Declaring Variables
 var timeLeft = document.querySelector("#timeLeft");
 var timer = document.querySelector("#startTime");
 var questionsDiv = document.querySelector("#questionsDiv");
@@ -7,14 +5,14 @@ var wrapper = document.querySelector("#wrapper");
 var score = 0;
 var questionsIndex = 0;
 
-// 100 seconds are given, to average out at 10 seconds per question 
+// Seconds is set at 100, in order to give an average of 10 seconds per question
 var currentTime = 101;
 var holdInterval = 0;
 var deduction = 15;
-// Creates new element
+
 var createUl = document.createElement("ul");
 
-// Variables with array and object for questions 
+
 var questions = [
     {
         title: "What city is the first US city to be founded by a woman?",
@@ -70,9 +68,8 @@ var questions = [
 
 ];
 
-// Triggers timer on button, shows user a display on the screen
+
 timer.addEventListener("click", function () {
-    // We are checking zero because its originally set to zero
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             currentTime--;
@@ -89,20 +86,16 @@ timer.addEventListener("click", function () {
     render(questionsIndex);
 });
 
-// Renders questions and choices to page: 
+
 function render(questionsIndex) {
-    // Clears existing data 
     questionsDiv.innerHTML = "";
     createUl.innerHTML = "";
-    // For loops to loop through all info in array
     for (var i = 0; i < questions.length; i++) {
     
-    // Appends question title only
         var usersQuestions = questions[questionsIndex].title;
         var usersChoices = questions[questionsIndex].choices;
         questionsDiv.textContent = usersQuestions;
     }
-    // New for each for question choices
     usersChoices.forEach(function (newItem) {
         var liItem = document.createElement("li");
         liItem.textContent = newItem;
@@ -111,7 +104,6 @@ function render(questionsIndex) {
         liItem.addEventListener("click", (check));
     })
 }
-// Event to check choices with answer
 function check(event) {
     var element = event.target;
 
@@ -119,23 +111,19 @@ function check(event) {
 
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
-        // Correct condition 
         if (element.textContent == questions[questionsIndex].answer) {
             score++;
             createDiv.textContent = "Correct! Stamp your Passport!"
-            // Correct condition 
         } else {
-            // Will deduct -5 seconds off currentTime for wrong answers
             currentTime = currentTime - deduction;
-            createDiv.textContent = "INCCORRECT -15 For you! "
+            createDiv.textContent = "INCCORRECT!"
         }
 
     }
-    // Question Index determines number question user is on
+
     questionsIndex++;
 
     if (questionsIndex >= questions.length) {
-        // End of the quizz
         finishQuiz();
         createDiv.textContent = "You did it! You traveled the globe!" + " " + "You got " + score + " questions right!";
     } else {
@@ -149,37 +137,32 @@ function finishQuiz() {
     questionsDiv.innerHTML = "";
     timeLeft.innerHTML = "";
 
-    // Heading:
     var finishedH1 = document.createElement("h1");
     finishedH1.setAttribute("id", "finishedH1");
     finishedH1.textContent = "Congrats! You finished the Quiz!!"
 
     questionsDiv.appendChild(finishedH1);
 
-    // Paragraph
     var createP = document.createElement("p");
     createP.setAttribute("id", "createP");
 
     questionsDiv.appendChild(createP);
 
-    // Calculates time 
     if (currentTime >= 0) {
         var timeRemaining = currentTime;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
-        createP.textContent = "Final Score: " + timeRemaining;
+        createP.textContent = "Your Final Score Is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
     }
 
-    // Label
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Please enter your name: ";
 
     questionsDiv.appendChild(createLabel);
 
-    // Enter your name
     var addInput = document.createElement("input");
     addInput.setAttribute("type", "text");
     addInput.setAttribute("id", "name");
@@ -187,7 +170,6 @@ function finishQuiz() {
 
     questionsDiv.appendChild(addInput);
 
-    // submit
     var subInput = document.createElement("button");
     subInput.setAttribute("type", "submit");
     subInput.setAttribute("id", "Submit");
@@ -195,7 +177,7 @@ function finishQuiz() {
 
     questionsDiv.appendChild(subInput);
 
-    // Event listener to capture the user initial and the scores 
+
     subInput.addEventListener("click", function () {
         var name = addInput.value;
 
@@ -218,7 +200,6 @@ function finishQuiz() {
             totalScores.push(finalScore);
             var newScore = JSON.stringify(totalScores);
             localStorage.setItem("totalScores", newScore);
-            // go back to the index page 
             window.location.replace("./HighScores.html");
         }
     });
