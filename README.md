@@ -1,14 +1,6 @@
 # 04 Web APIs: Code Quiz
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
-
-## User Story
-
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+The assignment was to make a code quiz that adhered to the following criteria. 
 
 ## Acceptance Criteria
 
@@ -26,17 +18,9 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 
-The following animation demonstrates the application functionality:
+## User Story
+Files created intially include, index.html, and highscores.html. In order to create a page for the quiz itself as well as a storage location to present high scrore names. Afterwards Assets folder was created in order to hold folders, css, js, and images. Whereas files script.js, highscores.js can be used to animate the quiz and highcores table. As well as style.css was made in order to edit the style of the pages. In the image folder a background image was added for the project pages. 
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+Code was made in order for the quiz to begin when the start button is clicked. Upon starting, a timer begins, giving the user 100 seconds(10 seconds per question). Should the user guess incorrectly, 15 seconds are deducted from the time. User moves on whether questions are right or wrong. They will be stopped and presented with a score of 0 if they run out of time. 
 
-### Review
-
-You are required to submit the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+When the game is over, users are promted to enter their names into the hall of fame. Users also have the option to clear out the high scores table if they wish to reset the board. From the "Hall of Fame" users can return to the main page and begin the quiz again. 
