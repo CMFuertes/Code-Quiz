@@ -200,7 +200,7 @@ function finishQuiz() {
             totalScores.push(finalScore);
             var newScore = JSON.stringify(totalScores);
             localStorage.setItem("totalScores", newScore);
-            window.location.replace("./highScores.html");
+            window.location.replace("highScores.html");
         }
     });
 
